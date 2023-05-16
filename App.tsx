@@ -1,9 +1,14 @@
 import React from 'react';
-import HomeScreen from './components/HomeScreen';
-import Header from './components/Header';
+import Header from './navigation/components/Header';
+import AppNavigator from './navigation/AppNavigator';
+
 
 export default function App() {
   return (
-    <Header title='My Mansion' location='Jaro, Iloilo, Philippines' onProfilePress={() => alert('Profile pressed')}/>
+    <>
+      <Header title='My Mansion' location='Jaro, Iloilo, Philippines' onProfilePress={() => alert('Profile pressed')}/>
+      <AppNavigator/>
+      
+    </>
   );
 }
