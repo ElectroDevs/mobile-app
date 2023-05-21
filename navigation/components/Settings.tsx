@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: 'left',
     alignSelf: 'flex-start', // Aligns the heading text to the left
-    color: '#8C6896'
+    color: '#226760'
   },
   horizontalLine: {
     borderBottomWidth: 1,

@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#8C6896'
+    color: '#226760'
   },
   notification: {
     backgroundColor: 'white',
@@ -71,7 +71,8 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   unclickedNotification: {
-    backgroundColor: '#F6CCD5',
+    backgroundColor: '#DEDEDE',
+    borderColor: '#E1BABC',
   },
   notificationContent: {
     flexDirection: 'row',

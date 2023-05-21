@@ -17,7 +17,7 @@ const Header = ({ title, location, onProfilePress }: Props) => {
           <Ionicons
                 name='location'
                 size={22}
-                color='#FFE878' />
+                color='yellow' />
            <Text style={styles.location}>{location}</Text>
         </View>
        
