@@ -22,6 +22,7 @@ const NotificationPage: React.FC<NotificationPageProps> = ({ notifications, onCl
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Notifications</Text>
+      <View style={styles.horizontalLine} />
       {notifications.length === 0 ? (
         <Text>No notifications</Text>
       ) : (
@@ -51,9 +52,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   heading: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#8C6896'
   },
   notification: {
     backgroundColor: 'white',
@@ -83,6 +85,12 @@ const styles = StyleSheet.create({
   },
   alertIcon: {
     marginLeft: 10,
+  },
+   horizontalLine: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#C1C1DE',
+    marginBottom: 20,
+    width: '100%',
   },
 });
 

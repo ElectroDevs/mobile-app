@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Button, Icon } from 'react-native-elements';
 
-const ProfileView: React.FC = () => {
+const Settings: React.FC = () => {
   const [showPackageDetails, setShowPackageDetails] = useState(false);
   const [showTermsOfService, setShowTermsOfService] = useState(false);
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
@@ -26,6 +26,8 @@ const ProfileView: React.FC = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.heading}>Settings</Text>
+       <View style={styles.horizontalLine} />
       <TouchableOpacity style={styles.dropdownToggle} onPress={togglePackageDetails}>
         <Text style={styles.dropdownToggleText}>
           Subscription
@@ -118,13 +120,6 @@ const ProfileView: React.FC = () => {
           <Text>Send your concerns to: electrodevs@support@gmail.com</Text>
         </View>
       )}
-      <View style={styles.viewbutton}>
-      <Button
-        buttonStyle={styles.button}
-        title="Logout"
-        onPress={() => alert('Logout button pressed')}
-        />
-      </View>
     </ScrollView>
   );
 };
@@ -133,7 +128,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     paddingHorizontal: 20,
-    paddingTop: 30,
+    paddingTop: 20,
     alignItems: 'center',
   },
   dropdownToggle: {
@@ -162,9 +157,23 @@ const styles = StyleSheet.create({
     width: 300,
   },
   viewbutton: {
-    marginTop: 200,
+    marginTop: 20,
     marginBottom: 20, 
-  }
+  },
+  heading: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'left',
+    alignSelf: 'flex-start', // Aligns the heading text to the left
+    color: '#8C6896'
+  },
+  horizontalLine: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#C1C1DE',
+    marginBottom: 20,
+    width: '100%',
+  },
 });
 
-export default ProfileView;
+export default Settings;
