@@ -8,19 +8,30 @@ const Settings: React.FC = () => {
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
   const [showHelpAndSupport, setShowHelpAndSupport] = useState(false);
 
+  const resetToggle = () => {
+    setShowPackageDetails(false);
+    setShowTermsOfService(false);
+    setShowHelpAndSupport(false);
+    setShowPrivacyPolicy(false);
+  }
+
   const togglePackageDetails = () => {
+    resetToggle();
     setShowPackageDetails(!showPackageDetails);
   };
 
   const toggleTermsOfService = () => {
+    resetToggle();
     setShowTermsOfService(!showTermsOfService);
   };
 
   const togglePrivacyPolicy = () => {
+    resetToggle();
     setShowPrivacyPolicy(!showPrivacyPolicy);
   };
 
   const toggleHelpAndSupport = () => {
+    resetToggle();
     setShowHelpAndSupport(!showHelpAndSupport);
   };
 
