@@ -1,11 +1,11 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React, { ReactElement } from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 type Props = {
   title: string;
   location: string;
-  onProfilePress: () => void;
+  onProfilePress: () => ReactElement | React.FC;
 }
 
 const Header = ({ title, location, onProfilePress }: Props) => {
@@ -16,7 +16,10 @@ const Header = ({ title, location, onProfilePress }: Props) => {
         <Text style={styles.location}>{location}</Text>
       </View>
       <TouchableOpacity style={styles.profileButton} onPress={onProfilePress}>
-        <Ionicons name="person-circle-outline" size={32} color="white" />
+        <View style={styles.profileImageContainer}>
+           <Image source={require('../../assets/id-pic-compressed.png')} style={styles.profileImage} />
+        </View>
+        {/* <Ionicons name="person-circle-outline" size={32} color="white" /> */}   
       </TouchableOpacity>
     </View>
   );
@@ -50,6 +53,16 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: 'rgba(255,255,255,0.2)',
     padding: 10,
+  },
+  profileImageContainer: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    overflow: 'hidden',
+  },
+  profileImage: {
+    width: '100%',
+    height: '100%',
   },
 });
 
