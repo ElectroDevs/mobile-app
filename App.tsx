@@ -7,7 +7,7 @@ import ProfileView from './navigation/components/Profile';
 export default function App() {
   return (
     <>
-      <Header title='My Mansion' location='Jaro, Iloilo, Philippines' onProfilePress={() => <ProfileView/>}/>
+      <Header title='My Mansion' location='Jaro, Iloilo, Philippines' onProfilePress={() => <ProfileView/>} />
       <AppNavigator/>
       
     </>
