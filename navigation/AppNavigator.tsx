@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import HomePage from './components/HomePage';
 import NotificationPage from './components/NotificationPage';
-import ProfileView from './components/Profile';
+import ProfileView from './components/Settings';
 
 type IconName =
   | "key"
@@ -26,6 +26,7 @@ type IconName =
   | "checkbox"
   | "radio"
   | "home"
+  | "cog-outline"
   | "home-outline"
   | "notifications"
   | "notifications-outline"
@@ -81,8 +82,8 @@ export default function AppNavigator() {
             } else if (route.name === 'Notifications') {
               iconName = focused ? 'notifications' : 'notifications-outline';
               color = unclickedNotificationCount > 0 ? 'red' : color;
-            } else if (route.name === 'Account') {
-              iconName = 'person-circle-outline';
+            } else if (route.name === 'Settings') {
+              iconName = 'cog-outline';
             }
 
             return <Ionicons name={iconName} size={size} color={color} />;
@@ -111,7 +112,7 @@ export default function AppNavigator() {
             />
           )}
         </Tab.Screen>
-        <Tab.Screen name='Account' component={ProfileView} />
+        <Tab.Screen name='Settings' component={ProfileView} />
       </Tab.Navigator>
     </NavigationContainer>
   );

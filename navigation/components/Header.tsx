@@ -13,7 +13,14 @@ const Header = ({ title, location, onProfilePress }: Props) => {
     <View style={styles.container}>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.location}>{location}</Text>
+        <View style={styles.locationContainer}>
+          <Ionicons
+                name='location'
+                size={22}
+                color='yellow' />
+           <Text style={styles.location}>{location}</Text>
+        </View>
+       
       </View>
       <TouchableOpacity style={styles.profileButton} onPress={onProfilePress}>
         <View style={styles.profileImageContainer}>
@@ -31,33 +38,41 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingTop: 50,
+    paddingTop: 20,
     paddingBottom: 20,
-    backgroundColor: '#007AFF',
+    backgroundColor: '#7B8FA5',
     width: '100%',
+    borderBottomEndRadius: 30,
+    borderBottomStartRadius: 30,
   },
   titleContainer: {
     flex: 1,
+  },
+   locationContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
     color: 'white',
     marginBottom: 5,
+    marginLeft: 3,
+    fontFamily: 'Trebuchet MS'
   },
   location: {
-    fontSize: 16,
+    fontSize: 12,
     color: 'white',
+    fontFamily: 'Trebuchet MS'
   },
   profileButton: {
     borderRadius: 50,
-    backgroundColor: 'rgba(255,255,255,0.2)',
-    padding: 10,
+    padding: 5,
   },
   profileImageContainer: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
+    width: 42,
+    height: 42,
+    borderRadius: 20,
     overflow: 'hidden',
   },
   profileImage: {
