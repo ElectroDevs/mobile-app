@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import HomePage from './components/HomePage';
 import NotificationPage from './components/NotificationPage';
 import ProfileView from './components/Settings';
+import ProfilePage from './components/ProfilePage';
 
 type IconName =
   | "key"
@@ -30,6 +31,7 @@ type IconName =
   | "home-outline"
   | "notifications"
   | "notifications-outline"
+  | "profile-outline"
   | "person-circle-outline"; // Add more icon names as needed
 
 interface Notification {
@@ -84,8 +86,9 @@ export default function AppNavigator() {
               color = unclickedNotificationCount > 0 ? 'red' : color;
             } else if (route.name === 'Settings') {
               iconName = 'cog-outline';
+            } else if (route.name === 'Profile') {
+              iconName = "person-circle-outline"
             }
-
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           headerShown: false,
@@ -113,6 +116,7 @@ export default function AppNavigator() {
           )}
         </Tab.Screen>
         <Tab.Screen name='Settings' component={ProfileView} />
+        <Tab.Screen name='Profile' component={ProfilePage} />
       </Tab.Navigator>
     </NavigationContainer>
   );
